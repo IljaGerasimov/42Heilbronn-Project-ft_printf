@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_specifier.c                                     :+:      :+:    :+:   */
+/*   ft_is_specifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 04:11:22 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/17 18:48:10 by igerasim         ###   ########.fr       */
+/*   Created: 2025/11/28 04:08:11 by igerasim          #+#    #+#             */
+/*   Updated: 2025/11/28 04:12:53 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_specifier(const char *format, ...)
+int	ft_is_specifier(char c)
 {
-	char	*specif;
-
-	specif = "cspdiuxX%";
 }

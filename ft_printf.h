@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:42:21 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/16 20:54:26 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/11/28 04:13:49 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,39 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-typedef struct s_list2
-{
-	va_list			my_arguments;
-	unsigned int	total_written;
-}					t_list2;
+// arguments - The argument-List
+// i - iterator;
+// width - Width (e.g. 3d)
+// precision - Precision (e.g. .3d)
+// zero - Flag '0'
+// dash - Flag '-'
+// plus - Flag '+'
+// hash - Flag '#'
+// space - Flag ' '
+// total_length ft_printf (Return Value)
 
-int					ft_printf(const char *format, ...);
-int					ft_parse(const char *format, ...);
+typedef struct s_printf
+{
+	va_list	arguments;
+	int		i;
+	int		width;
+	int		precision;
+	int		zero;
+	int		dash;
+	int		plus;
+	int		hash;
+	int		space;
+	int		total_length;
+}			t_printf;
+
+typedef struct s_program
+{
+	char	converter;
+	int		(*f)(t_printf *);
+}			t_program;
+
+int			ft_printf(const char *format, ...);
+int			ft_parse(t_printf *data, const char *fmt);
+int			ft_is_specifier(char c);
 
 #endif
