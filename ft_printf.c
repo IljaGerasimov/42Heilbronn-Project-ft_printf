@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:33:28 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/28 04:16:02 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/11/28 08:06:30 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,26 @@ static void	ft_initialise_data(t_printf *data)
 	data->space = 0;
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *form, ...)
 {
 	t_printf	data;
 
-	if (!format)
+	if (!form)
 		return (-1);
 	ft_initialise_data(&data);
-	va_start((data.arguments), format);
+	va_start((data.arguments), form);
 	data.total_length = 0;
 	data.i = 0;
-	while (format[data.i])
+	while (form[data.i])
 	{
-		if (format[data.i] == '%')
+		if (form[data.i] == '%')
 		{
 			ft_initialise_data(&data);
-			data.i += ft_parse(&data, format);
+			data.i += ft_parse(&data, form);
 		}
 		else
 		{
-			write(1, (char *)&format[data.i], 1);
+			write(1, (char *)&form[data.i], 1);
 			data.total_length++;
 			data.i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:42:21 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/28 04:13:49 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/11/28 08:04:54 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ typedef struct s_program
 }			t_program;
 
 int			ft_printf(const char *format, ...);
-int			ft_parse(t_printf *data, const char *fmt);
-int			ft_is_specifier(char c);
+int			ft_parse(t_printf *data, const char *format);
+int			ft_dispatch(t_printf *data, const char *format);
+void		ft_print_alpha(t_printf *data, const char *format);
+void		ft_print_hex(t_printf *data, const char *format);
+
 
 #endif
