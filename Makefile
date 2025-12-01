@@ -6,7 +6,7 @@
 #    By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 07:33:52 by igerasim          #+#    #+#              #
-#    Updated: 2025/11/28 08:04:02 by igerasim         ###   ########.fr        #
+#    Updated: 2025/12/01 11:53:05 by igerasim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRCS = ft_printf.c\
-		ft_parse.c\
 		ft_dispatch.c\
 		ft_print_alpha.c\
 		ft_print_nbr.c\
@@ -28,7 +27,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
 
-$(NAME) $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	@cp $(LIBFT) $(NAME)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "ft_printf successfully compiled!"

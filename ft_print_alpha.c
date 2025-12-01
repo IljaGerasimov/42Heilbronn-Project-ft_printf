@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 07:15:53 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/28 08:06:08 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:53:04 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 static void	ft_print_string(t_printf *data)
 {
 	char	*string;
-	int		len;
 
 	string = va_arg(data->arguments, char *);
+	if (!string)
+		string = "(null)";
 	ft_putstr_fd(string, 1);
-	len = ft_strlen(string);
-	while (len)
-	{
-		data->total_length++;
-		len--;
-	}
+	data->total_length += ft_strlen(string);
 }
 
 static void	ft_print_char(t_printf *data)
@@ -38,8 +34,8 @@ static void	ft_print_char(t_printf *data)
 
 void	ft_print_alpha(t_printf *data, const char *form)
 {
-	if (*form == 'c')
+	if (form[data->i] == 'c')
 		ft_print_char(data);
-	else if (*form == 's')
+	else if (form[data->i] == 's')
 		ft_print_string(data);
 }

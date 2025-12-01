@@ -6,22 +6,11 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:33:28 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/28 08:06:30 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:48:55 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	ft_initialise_data(t_printf *data)
-{
-	data->width = 0;
-	data->precision = -1;
-	data->zero = 0;
-	data->dash = 0;
-	data->plus = 0;
-	data->hash = 0;
-	data->space = 0;
-}
 
 int	ft_printf(const char *form, ...)
 {
@@ -29,7 +18,6 @@ int	ft_printf(const char *form, ...)
 
 	if (!form)
 		return (-1);
-	ft_initialise_data(&data);
 	va_start((data.arguments), form);
 	data.total_length = 0;
 	data.i = 0;
@@ -37,8 +25,8 @@ int	ft_printf(const char *form, ...)
 	{
 		if (form[data.i] == '%')
 		{
-			ft_initialise_data(&data);
-			data.i += ft_parse(&data, form);
+			ft_dispatch(&data, form);
+			data.i++;
 		}
 		else
 		{

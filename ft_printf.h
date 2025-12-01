@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:42:21 by igerasim          #+#    #+#             */
-/*   Updated: 2025/11/28 08:04:54 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:48:51 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,15 @@ typedef struct s_printf
 {
 	va_list	arguments;
 	int		i;
-	int		width;
-	int		precision;
-	int		zero;
-	int		dash;
-	int		plus;
-	int		hash;
-	int		space;
 	int		total_length;
 }			t_printf;
 
-typedef struct s_program
-{
-	char	converter;
-	int		(*f)(t_printf *);
-}			t_program;
-
-int			ft_printf(const char *format, ...);
-int			ft_parse(t_printf *data, const char *format);
-int			ft_dispatch(t_printf *data, const char *format);
-void		ft_print_alpha(t_printf *data, const char *format);
-void		ft_print_hex(t_printf *data, const char *format);
-
+/// @brief Scans String for Specifiers and prints Arguments
+/// @return length of total printed characters
+int			ft_printf(const char *form, ...);
+void		ft_dispatch(t_printf *data, const char *form);
+void		ft_print_alpha(t_printf *data, const char *form);
+void		ft_print_nbr(t_printf *data, const char *form);
+void		ft_print_hex(t_printf *data, const char *form);
 
 #endif
