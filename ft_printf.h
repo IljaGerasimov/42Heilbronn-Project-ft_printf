@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:42:21 by igerasim          #+#    #+#             */
-/*   Updated: 2025/12/02 09:17:40 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/02 13:27:11 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 // arguments - The argument-List
 // i - iterator;
 // total_length - Return Value of ft_printf()
-
 typedef struct s_printf
 {
 	va_list	arguments;

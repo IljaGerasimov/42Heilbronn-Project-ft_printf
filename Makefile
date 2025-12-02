@@ -6,7 +6,7 @@
 #    By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 07:33:52 by igerasim          #+#    #+#              #
-#    Updated: 2025/12/02 10:48:23 by igerasim         ###   ########.fr        #
+#    Updated: 2025/12/02 13:25:22 by igerasim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(OBJS)
 	@cp $(LIBFT) $(NAME)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "ft_printf successfully compiled! ✅🤑"
+	@echo "libftprintf.a successfully compiled! ✅🤑"
 
 $(LIBFT):
 	@make all -sC $(LIBFT_DIR)
@@ -43,9 +43,9 @@ clean:
 	@rm -f $(OBJS)
 	@echo "Cleaned objects 🧹⚙️"
 
-fclean: clean
+fclean:
 	@make fclean -sC $(LIBFT_DIR)
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(OBJS)
 	@echo "Cleaned library 🧹📚"
 
 re: fclean all
