@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:42:21 by igerasim          #+#    #+#             */
-/*   Updated: 2025/12/01 11:48:51 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/02 09:17:40 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,7 @@
 
 // arguments - The argument-List
 // i - iterator;
-// width - Width (e.g. 3d)
-// precision - Precision (e.g. .3d)
-// zero - Flag '0'
-// dash - Flag '-'
-// plus - Flag '+'
-// hash - Flag '#'
-// space - Flag ' '
-// total_length ft_printf (Return Value)
+// total_length - Return Value of ft_printf()
 
 typedef struct s_printf
 {

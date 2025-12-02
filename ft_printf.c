@@ -6,7 +6,7 @@
 /*   By: igerasim <igerasim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 07:33:28 by igerasim          #+#    #+#             */
-/*   Updated: 2025/12/01 11:48:55 by igerasim         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:10:16 by igerasim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,3 @@ int	ft_printf(const char *form, ...)
 	va_end(data.arguments);
 	return (data.total_length);
 }
-
-//("hallo %1.618d aka Aleph :)", int a, char *ohio)
